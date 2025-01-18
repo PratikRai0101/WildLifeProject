@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.marker {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.marker:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.marker-critically-endangered {
+  border-color: #ef4444;
+}
+
+.marker-endangered {
+  border-color: #f97316;
+}
+
+.marker-vulnerable {
+  border-color: #eab308;
+}
+
+.custom-icon {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.custom-icon.marker-critically-endangered {
+  box-shadow: 0 0 0 3px #ef4444;
+}
+
+.custom-icon.marker-endangered {
+  box-shadow: 0 0 0 3px #f97316;
+}
+
+.custom-icon.marker-vulnerable {
+  box-shadow: 0 0 0 3px #eab308;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-control-container {
+  z-index: 15;
+}
+
+/* Smooth zoom animation */
+.leaflet-fade-anim .leaflet-tile,
+.leaflet-zoom-anim .leaflet-zoom-animated {
+  will-change: auto !important;
+}
+
+/* Improve touch behavior */
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  border: none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom map controls */
+.leaflet-bar a {
+  background-color: #ffffff;
+  border: none;
+  color: #333;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  transition: all 0.3s ease;
+}
+
+.leaflet-bar a:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 640px) {
+  .marker {
+    width: 40px;
+    height: 40px;
+  }
+
+  .leaflet-bar a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
